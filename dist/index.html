@@ -13,13 +13,41 @@
     <div id="content">
         <div id="sidebar">
             <div id=sidebarbuttons" style="text-align: center;">
-                <button type="button" id="newlist">New List</button>
+                <button type="button" id="newlist" onclick="ExpandNewList()">New List</button>
+                <button type="button" id="newtodo" onclick="ExpandNewTodo()">New Todo</button>
                 <button type="button" onclick="localStorage.clear(); window.location.reload(true);" id="startover">Start Over</button>
+            </div>
+            <div class="invisible" id="addtodoform">
+                <br>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" placeholder="Do the laundry" required>
+                <br>
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" placeholder="White clothes">
+                <br>
+                <label for="dueDate">Due date:</label>
+                <input type="date" id="dueDate" name="dueDate" placeholder="yyyy/mm/dd" value="">
+                <br>
+                <label for="priority">Priority:</label>
+                <input type="number" id="priority" name="priority" placeholder="1-10" min="1" max="10" value="7" required>
+                <br>
+                <label for="notes">Notes:</label>
+                <input type="text" id="notes" name="notes" placeholder="Don't forget the socks">
+                <button type="button" id="addtodobutton" onclick="UserAddTodo()">Add Todo</button>
+            </div>
+            <div class="invisible" id="addlistform">
+                <br>
+                <label for="listName">Name:</label>
+                <input type="text" id="listName" name="listName" placeholder="Groceries" required>
+                <br>
+                <label for="color">Color:</label>
+                <input type="color" id="color" name="color" value="#ff0000">
+                <button type="button" id="addlistbutton" onclick="UserAddList()">Add List</button>
             </div>
             <p class="sidebaritem" id="alltodos" onclick="ShowAllTodos();">All todos</p>
             <div id="sidebardynamic"></div>
         </div>
-        <div id="todos">teste</div>
+        <div id="todos"></div>
     </div>
     <footer>
         <p>Coded and styled by <a href="https://github.com/28r" target="_blank" rel="noopener noreferrer">Antônio Moraes</a> &copy; 2022</p>
