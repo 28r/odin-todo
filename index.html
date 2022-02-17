@@ -11,7 +11,14 @@
 <body>
     <div id="header">Tony's To-Do Lists</div>
     <div id="content">
-        <div id="sidebar">teste</div>
+        <div id="sidebar">
+            <div id=sidebarbuttons" style="text-align: center;">
+                <button type="button" id="newlist">New List</button>
+                <button type="button" onclick="localStorage.clear(); window.location.reload(true);" id="startover">Start Over</button>
+            </div>
+            <p class="sidebaritem" id="alltodos" onclick="ShowAllTodos();">All todos</p>
+            <div id="sidebardynamic"></div>
+        </div>
         <div id="todos">teste</div>
     </div>
     <footer>
